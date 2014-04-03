@@ -1,0 +1,15 @@
+"          _         _       ___
+"     ___ |_|__   __| |_  /|| _ |
+"    | _ | _ \ \_/ /| _ || |||_||
+"    ||_||| | \   / ||_||| |||_||
+"    |__ ||_|  \_/  |___||_||___|
+"      |_|
+"
+
+let g:spf13_bundle_groups=['general', 'writing', 'programming', 'python', 'misc', 'javascript', 'html', 'ruby', 'neocomplcache' ]
+let g:spf13_no_autochdir = 1
+
+" vim-airline {
+    let g:airline_powerline_fonts=1
+    let g:airline_theme = 'murmur'
+" }

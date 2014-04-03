@@ -1,0 +1,152 @@
+" UnBundles {
+    " General {
+        UnBundle 'nathanaelkane/vim-indent-guides'
+        UnBundle 'bling/vim-bufferline'
+    " }
+
+    " PHP {
+        UnBundle 'spf13/PIV'
+        UnBundle 'arnaud-lb/vim-php-namespace'
+    " }
+
+    " Scala {
+        UnBundle 'derekwyatt/vim-scala'
+        UnBundle 'derekwyatt/vim-sbt'
+    " }
+
+    " Haskell {
+        UnBundle 'travitch/hasksyn'
+        UnBundle 'dag/vim2hs'
+        UnBundle 'Twinside/vim-haskellConceal'
+        UnBundle 'Twinside/vim-haskellFold'
+        UnBundle 'lukerandall/haskellmode-vim'
+        UnBundle 'eagletmt/neco-ghc'
+        UnBundle 'eagletmt/ghcmod-vim'
+        UnBundle 'Shougo/vimproc'
+        UnBundle 'adinapoli/cumino'
+        UnBundle 'bitc/vim-hdevtools'
+    " }
+
+    " Go Lang {
+        UnBundle 'Blackrush/vim-gocode'
+        UnBundle 'fatih/vim-go'
+    " }
+
+    " Twig {
+        UnBundle 'beyondwords/vim-twig'
+    " }
+" }
+
+" Bundles {
+    " General {
+        Bundle 'vim-scripts/bufexplorer.zip'
+        Bundle 'uarun/vim-protobuf.git'
+        Bundle 'vim-scripts/mediawiki'
+        Bundle 'vim-scripts/DrawIt'
+    " }
+
+    " cpp {
+        " подсветка синтаксиса для нового стандарта
+        Bundle 'thynson/Cpp11-Syntax-Support'
+        " переключение между заголовочным и файлом реализации
+        Bundle 'Plambir/a.vim'
+    " }
+" }
+
+
+
+"Отключаем проверку синтаксиса
+set nospell
+"Цветовая схема
+colorscheme wombat256
+
+"------------------------
+"Russian support
+"------------------------
+set keymap=russian-jcukenwin
+"по умолчанию - латинская раскладка для ввода
+set iminsert=0
+"по умолчанию - латинская раскладка для поиска
+set imsearch=0
+"изменяем цвет курсора при кириллической раскладке
+highlight lCursor guifg=NONE guibg=Cyan
+"набор языков по которым будет проверяться текст
+set spelllang=ru_yo,en_us
+
+"autocmd BufEnter *.c,*.h source ~/.vim/linux_kernel.vim
+
+autocmd FileType cpp set syntax=cpp11
+autocmd FileType c setlocal omnifunc=ccomplete#Complete
+autocmd FileType cpp setlocal omnifunc=cppcomplete#Complete
+
+autocmd BufWinLeave * call clearmatches()
+source ~/.spf13-vim-3/linux_kernel.vim
+
+" NerdTree {
+    " F3 {
+        nmap <F3> :NERDTreeToggle<cr>
+        vmap <F3> <Esc> :NERDTreeToggle<cr>
+        imap <F3> <Esc> :NERDTreeToggle<cr>
+    " }
+
+    let NERDTreeQuitOnOpen=0
+    let NERDTreeShowBookmarks=0
+    let NERDTreeDirArrows=1
+
+    unmap <C-e>
+    nunmap <leader>e
+    nunmap <leader>nt
+" }
+
+" TagBar {
+    " F4 {
+        nmap <F4> :TagbarToggle<cr>
+        vmap <F4> <Esc> :TagbarToggle<cr>
+        imap <F4> <Esc> :TagbarToggle<cr>
+    " }
+"}
+
+" Buffer explorer {
+    " F5 {
+        nmap <F5> <Esc>:BufExplorer<cr>
+        vmap <F5> <esc>:BufExplorer<cr>
+        imap <F5> <esc><esc>:BufExplorer<cr>
+    " }
+" }
+
+" Key Remap {
+    " F2 { быстрое сохранение
+        nmap <F2> :w<cr>
+        vmap <F2> <Esc>:w<cr>
+        imap <F2> <Esc>:w<cr>
+    " }
+
+    " F10 { выход из Vim
+        nmap <F10> :qa<cr>
+        vmap <F10> <Esc>:qa<cr>
+        imap <F10> <Esc>:qa<cr>
+    " }
+
+    " C-y { удаление текущей строки
+        nmap <C-y> dd
+        imap <C-y> <esc>ddi
+    " }
+
+    " S-Insert { Make shift-insert work like in Xterm
+        imap <S-Insert> <MiddleMouse>
+    " }
+
+    " { выключаем режим вставки
+        " imap <Ins> <Esc>i
+    " }
+
+
+    " nmap <C-J> vip=  " forces (re)indentation of a block of code"
+
+    " map  <C-UP> <S-v>d<up><up>p
+    " imap <C-UP> <esc><S-v>d<up><up>pi
+
+    " map <C-DOWN> <S-v>dp
+    " imap <C-DOWN> <esc><S-v>dpi
+" }
+
