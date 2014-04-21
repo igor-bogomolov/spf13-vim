@@ -46,12 +46,20 @@
     " }
 
     " cpp {
-        " подсветка синтаксиса для нового стандарта
         Bundle 'thynson/Cpp11-Syntax-Support'
-        " переключение между заголовочным и файлом реализации
         Bundle 'Plambir/a.vim'
+        Bundle 'yihualu/c.vim'
+        Bundle 'vim-scripts/OmniCppComplete'
     " }
 " }
+
+let g:snips_author = 'Igor Bogomolov <qivb18@gmail.com>'
+
+"Метод фолдинга
+set foldmethod=syntax
+set foldcolumn=0 "Колоночка, чтобы показывать плюсики для скрытия блоков кода
+set foldlevel=0
+set nofoldenable "Отключаем сварачивание кода
 
 
 
@@ -73,11 +81,10 @@ highlight lCursor guifg=NONE guibg=Cyan
 "набор языков по которым будет проверяться текст
 set spelllang=ru_yo,en_us
 
-"autocmd BufEnter *.c,*.h source ~/.vim/linux_kernel.vim
-
 autocmd FileType cpp set syntax=cpp11
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
-autocmd FileType cpp setlocal omnifunc=cppcomplete#Complete
+" autocmd FileType cpp setlocal omnifunc=cppcomplete#Complete
+autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 autocmd BufWinLeave * call clearmatches()
 source ~/.spf13-vim-3/linux_kernel.vim

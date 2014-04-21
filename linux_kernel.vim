@@ -2,12 +2,10 @@
 set wildignore+=*.ko,*.mod.c,*.order,modules.builtin,*.o,*.obj
 
 "augroup linuxsty
-	"autocmd!
-
-	autocmd FileType c call s:LinuxFormatting()
-	autocmd FileType c call s:LinuxKeywords()
-	autocmd FileType c call s:LinuxHighlighting()
-	autocmd FileType diff,kconfig setlocal tabstop=8
+	" autocmd FileType c call s:LinuxFormatting()
+	" autocmd FileType c call s:LinuxKeywords()
+	" autocmd FileType c call s:LinuxHighlighting()
+	" autocmd FileType diff,kconfig setlocal tabstop=8
 "augroup END
 
 function! s:LinuxFormatting()
