@@ -51,6 +51,10 @@
         Bundle 'yihualu/c.vim'
         Bundle 'vim-scripts/OmniCppComplete'
     " }
+
+    " smali {
+        Bundle 'kelwin/vim-smali'
+    " }
 " }
 
 let g:snips_author = 'Igor Bogomolov <qivb18@gmail.com>'
@@ -148,12 +152,12 @@ source ~/.spf13-vim-3/linux_kernel.vim
     " }
 
 
-    " nmap <C-J> vip=  " forces (re)indentation of a block of code"
+    nmap <C-J> vip=  " forces (re)indentation of a block of code"
 
-    " map  <C-UP> <S-v>d<up><up>p
-    " imap <C-UP> <esc><S-v>d<up><up>pi
+    map  <C-UP> <S-v>d<up><up>p
+    imap <C-UP> <esc><S-v>d<up><up>pi
 
-    " map <C-DOWN> <S-v>dp
-    " imap <C-DOWN> <esc><S-v>dpi
+    map <C-DOWN> <S-v>dp
+    imap <C-DOWN> <esc><S-v>dpi
 " }
 
